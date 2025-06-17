@@ -12,18 +12,19 @@ const AboutUssection = () => {
           <div className="h-0.5 w-6 bg-blue-600 ml-2"></div>
         </div>
         <h2 className="text-3xl font-bold mb-6 text-gray-900">
-          Welcome to AE Talents Healthcare
+          Welcome to Global Tech Services Healthcare
         </h2>
         <p className="text-gray-700 mb-4">
-          <span className="font-bold">AE Talents</span> Healthcare are a dedicated
-          provider of specialized staffing solutions for healthcare facilities across
-          diverse settings.
+          <span className="font-bold">Global Tech Services</span> Healthcare are
+          a dedicated provider of specialized staffing solutions for healthcare
+          facilities across diverse settings.
         </p>
         <p className="text-gray-700">
-          <span className="font-bold">AE Talents</span> Healthcare specialize in
-          connecting healthcare providers with skilled professionals, including
-          registered nurses (RNs), licensed practical nurses (LPNs), certified nursing
-          assistants (CNAs), and other essential healthcare roles.
+          <span className="font-bold">Global Tech Services</span> Healthcare
+          specialize in connecting healthcare providers with skilled
+          professionals, including registered nurses (RNs), licensed practical
+          nurses (LPNs), certified nursing assistants (CNAs), and other
+          essential healthcare roles.
         </p>
       </div>
 

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import {
   FaEnvelope,
   FaPhone,
@@ -11,14 +11,26 @@ import { HiLocationMarker } from "react-icons/hi";
 
 const Header = () => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
+  const location = useLocation();
+
+  const navLinks = [
+    { name: "Home", path: "/" },
+    { name: "About Us", path: "/about" },
+    { name: "Services +", path: "/services" },
+    { name: "Staffing Solutions", path: "/staffing" },
+    { name: "Contact", path: "/contact" },
+  ];
 
   return (
     <div className="w-full font-outfit">
       {/* Top Header */}
       <div className="flex flex-wrap justify-center sm:justify-between items-center px-6 py-4 bg-white shadow text-center sm:text-left">
-        <div className="w-full sm:w-auto text-center font-bold text-lg">
+        <Link
+          to="/"
+          className="w-full sm:w-auto text-center font-bold text-lg text-black hover:text-blue-800 transition duration-300"
+        >
           GLOBAL TECH SERVICES
-        </div>
+        </Link>
 
         <div className="hidden sm:flex flex-col sm:flex-row sm:items-center sm:space-x-10 text-sm">
           <div className="flex items-center space-x-2">
@@ -55,28 +67,25 @@ const Header = () => {
 
         {/* Desktop Nav Links */}
         <div className="hidden sm:flex flex-grow justify-center gap-8 text-base font-semibold">
-          <Link to="/" className="hover:underline">
-            Home
-          </Link>
-          <Link to="/about" className="hover:underline">
-            About Us
-          </Link>
-          <Link to="/services" className="hover:underline">
-            Services
-          </Link>
-          <Link to="/training" className="hover:underline">
-            Training
-          </Link>
-          <Link to="/contact" className="hover:underline">
-            Contact
-          </Link>
+          {navLinks.map((link) => (
+            <Link
+              key={link.name}
+              to={link.path}
+              className={`${
+                location.pathname === link.path
+                  ? "text-yellow-400"
+                  : "text-white"
+              } hover:no-underline transition duration-300`}
+            >
+              {link.name}
+            </Link>
+          ))}
         </div>
 
-        {/* Contact Button */}
         {/* Desktop Contact Button */}
         <Link
           to="/contact"
-          className="hidden sm:flex items-center gap-2 bg-white text-black font-bold px-5 py-2 rounded-lg shadow-md hover:bg-blue-800 transition duration-300"
+          className="hidden sm:flex items-center gap-2 bg-white text-black font-bold px-5 py-2 rounded-lg shadow-md hover:bg-blue-800 hover:text-white transition duration-300"
         >
           <FaShareSquare />
           CONTACT US
@@ -100,24 +109,23 @@ const Header = () => {
               </button>
             </div>
             <nav className="flex flex-col gap-4 text-base font-semibold">
-              <Link to="/" onClick={() => setSidebarOpen(false)}>
-                Home
-              </Link>
-              <Link to="/about" onClick={() => setSidebarOpen(false)}>
-                About Us
-              </Link>
-              <Link to="/services" onClick={() => setSidebarOpen(false)}>
-                Services
-              </Link>
-              <Link to="/training" onClick={() => setSidebarOpen(false)}>
-                Training
-              </Link>
-              <Link to="/contact" onClick={() => setSidebarOpen(false)}>
-                Contact
-              </Link>
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  to={link.path}
+                  className={`${
+                    location.pathname === link.path
+                      ? "text-orange-500"
+                      : "text-black"
+                  } hover:no-underline transition duration-300`}
+                  onClick={() => setSidebarOpen(false)}
+                >
+                  {link.name}
+                </Link>
+              ))}
               <Link
                 to="/contact"
-                className="mt-4 bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded shadow-md hover:bg-blue-800 transition duration-300"
+                className="mt-4 bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded shadow-md transition duration-300"
                 onClick={() => setSidebarOpen(false)}
               >
                 <FaShareSquare className="inline mr-2" />

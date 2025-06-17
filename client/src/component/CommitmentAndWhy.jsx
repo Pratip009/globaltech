@@ -13,7 +13,10 @@ const CommitmentAndWhy = () => {
             </h3>
           </div>
           <p className="text-gray-800 leading-relaxed">
-            Choose us for innovative technology-driven solutions, personalized service, and a commitment to excellence in healthcare staffing. Partner with us to enhance your operational efficiency and achieve superior patient care outcomes.
+            Choose us for innovative technology-driven solutions, personalized
+            service, and a commitment to excellence in healthcare staffing.
+            Partner with us to enhance your operational efficiency and achieve
+            superior patient care outcomes.
           </p>
         </div>
 
@@ -26,7 +29,13 @@ const CommitmentAndWhy = () => {
             </h3>
           </div>
           <p className="text-gray-800 leading-relaxed">
-            At <span className="font-bold">AE Talents</span> Healthcare, we prioritize both the well-being and professional development of our healthcare professionals. Our commitment to competitive compensation, flexible scheduling, and a supportive work environment helps foster an atmosphere where you can thrive. We are dedicated to creating opportunities that not only meet your career goals but also support your personal growth and satisfaction.
+            At <span className="font-bold">Global Tech Services</span>{" "}
+            Healthcare, we prioritize both the well-being and professional
+            development of our healthcare professionals. Our commitment to
+            competitive compensation, flexible scheduling, and a supportive work
+            environment helps foster an atmosphere where you can thrive. We are
+            dedicated to creating opportunities that not only meet your career
+            goals but also support your personal growth and satisfaction.
           </p>
         </div>
       </div>
